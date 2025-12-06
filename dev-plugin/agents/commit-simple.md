@@ -2,6 +2,7 @@
 name: commit-simple
 description: Creates a simple one-line commit by analyzing previous commit styles in the project
 model: haiku
+permissionMode: bypassPermissions
 ---
 
 # commit-simple Agent

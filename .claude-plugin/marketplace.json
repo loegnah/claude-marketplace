@@ -5,11 +5,6 @@
 	},
 	"plugins": [
 		{
-			"name": "first-plugin",
-			"source": "./first-plugin",
-			"description": "A simple greeting plugin to learn the basics"
-		},
-		{
 			"name": "dev-plugin",
 			"source": "./dev-plugin",
 			"description": "Development utilities for everyday coding tasks"

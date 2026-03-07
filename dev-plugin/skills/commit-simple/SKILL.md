@@ -1,10 +1,10 @@
 ---
 name: commit-simple
-description: Creates a simple one-line commit by analyzing previous commit styles in the project
-model: haiku
+description: Quick commit with auto-generated message based on project's commit style. Use when the user asks to commit, make a commit, or says "commit-simple".
+disable-model-invocation: true
 ---
 
-# commit-simple Agent
+# commit-simple
 
 ## Rules
 
@@ -26,6 +26,6 @@ model: haiku
    - Use prefix like "feat:", "chore:", "fix:", and so on.
    - Write very simply (just one line).
    - Only when absolutely necessary, summarize the key points of the revised content one line at a time at the bottom.
-  
+
 4. Execute the commit
    - Run `git commit -m "MESSAGE"`

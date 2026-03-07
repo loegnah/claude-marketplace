@@ -5,9 +5,8 @@
 	},
 	"plugins": [
 		{
-			"name": "dev-plugin",
-			"source": "./dev-plugin",
-			"description": "Development utilities for everyday coding tasks"
+			"name": "git-plugin",
+			"source": "./git-plugin"
 		}
 	]
 }

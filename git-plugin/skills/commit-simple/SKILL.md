@@ -5,7 +5,10 @@ disable-model-invocation: true
 context: true
 ---
 
-# commit-simple
+## Context
+
+- Recent commit style: !`git log --oneline -10`
+- Staged changes: !`git diff --cached`
 
 ## Rules
 
@@ -16,17 +19,11 @@ context: true
 
 ## Steps
 
-1. Check recent 10 commit messages to understand the project's commit style
-   - Run `git log --oneline -10`
-
-2. Check staged changes
-   - Run `git diff --cached`
-
-3. Create commit message
+1. Create commit message based on the context above
    - Only use English.
    - Use prefix like "feat:", "chore:", "fix:", and so on.
    - Write very simply (just one line).
    - Only when absolutely necessary, summarize the key points of the revised content one line at a time at the bottom.
 
-4. Execute the commit
+2. Execute the commit
    - Run `git commit -m "MESSAGE"`

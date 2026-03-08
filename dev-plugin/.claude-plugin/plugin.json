@@ -1,0 +1,8 @@
+{
+	"name": "dev-plugin",
+	"description": "Development workflow utilities for worktree management and project synchronization",
+	"version": "0.1.0",
+	"author": {
+		"name": "Loegnah"
+	}
+}

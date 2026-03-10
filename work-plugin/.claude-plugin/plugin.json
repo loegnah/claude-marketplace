@@ -1,0 +1,8 @@
+{
+	"name": "work-plugin",
+	"description": "Work reporting utilities for weekly summaries and activity tracking",
+	"version": "0.1.0",
+	"author": {
+		"name": "Loegnah"
+	}
+}

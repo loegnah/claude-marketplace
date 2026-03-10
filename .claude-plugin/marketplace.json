@@ -7,6 +7,10 @@
 		{
 			"name": "git-plugin",
 			"source": "./git-plugin"
+		},
+		{
+			"name": "work-plugin",
+			"source": "./work-plugin"
 		}
 	]
 }

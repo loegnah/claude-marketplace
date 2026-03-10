@@ -9,6 +9,10 @@
 			"source": "./git-plugin"
 		},
 		{
+			"name": "dev-plugin",
+			"source": "./dev-plugin"
+		},
+		{
 			"name": "work-plugin",
 			"source": "./work-plugin"
 		}

@@ -1,5 +1,7 @@
 ---
 name: report-weekly
+model: sonnet
+disable-model-invocation: true
 description: Generate a weekly work report from git commit history. Use when the user asks for a weekly report, work summary, or says "report-weekly". Analyzes commits to produce a structured markdown report.
 allowed-tools:
   - Bash(git log:*)

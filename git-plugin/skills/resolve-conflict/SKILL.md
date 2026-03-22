@@ -1,6 +1,8 @@
 ---
 name: resolve-conflict
-description: Resolve git conflicts during rebase or merge by analyzing both branches' changes. Use when the user says "resolve conflict", "fix conflict", "충돌 해결", "rebase conflict", "merge conflict", or when git status shows unmerged paths during rebase/merge. Also trigger when the user is stuck on conflicts or asks for help with conflicting files. This skill resolves conflicts - for reviewing already-resolved conflicts, use review-conflict instead.
+description: Use when you want to resolve conflict by rebase or merge.
+disable-model-invocation: true
+context: true
 ---
 
 # Resolve Git Conflicts

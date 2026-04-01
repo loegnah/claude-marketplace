@@ -2,7 +2,6 @@
 name: resolve-conflict
 description: Use when you want to resolve conflict by rebase or merge.
 disable-model-invocation: true
-context: true
 ---
 
 # Resolve Git Conflicts
@@ -26,6 +25,7 @@ git status
 ```
 
 Determine what's happening:
+
 - **Rebase in progress**: `.git/rebase-merge/` or `.git/rebase-apply/` exists
 - **Merge in progress**: `.git/MERGE_HEAD` exists
 - **Neither**: No conflict operation in progress — tell the user and stop
@@ -92,6 +92,7 @@ git show :1:<file>    # "base" - the merge base version
 ```
 
 Compare all three versions to understand:
+
 1. **What did the base version look like?** (the starting point both branches diverged from)
 2. **What did "ours" change from the base?** (and why — check the commit messages)
 3. **What did "theirs" change from the base?** (and why)
@@ -102,12 +103,12 @@ This three-way comparison is the foundation of a correct resolution. The base ve
 
 Each conflict region falls into one of these categories:
 
-| Category | Description | Action |
-|----------|------------|--------|
-| **Non-overlapping** | Both sides changed different things in the same area (e.g., one added a line above, one below) | Combine both changes |
-| **Complementary** | Both sides made changes toward the same goal (e.g., both fixed the same bug differently) | Pick the better one or combine, ask if unclear |
-| **Competing** | Both sides made intentional, contradictory changes to the same logic | **Ask the user** |
-| **One-sided** | Only one side made meaningful changes; the other side's diff is incidental (e.g., formatting, reordering) | Take the meaningful change |
+| Category            | Description                                                                                               | Action                                         |
+| ------------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| **Non-overlapping** | Both sides changed different things in the same area (e.g., one added a line above, one below)            | Combine both changes                           |
+| **Complementary**   | Both sides made changes toward the same goal (e.g., both fixed the same bug differently)                  | Pick the better one or combine, ask if unclear |
+| **Competing**       | Both sides made intentional, contradictory changes to the same logic                                      | **Ask the user**                               |
+| **One-sided**       | Only one side made meaningful changes; the other side's diff is incidental (e.g., formatting, reordering) | Take the meaningful change                     |
 
 ## Step 4: Resolve
 
@@ -127,6 +128,7 @@ For each conflicting file:
 ### When to Ask the User
 
 Stop and ask when:
+
 - Two branches made **competing intentional changes** to the same logic and it's not clear how to combine them
 - A conflict involves **business logic decisions** where you can't determine the correct behavior from code context alone
 - The commit messages or code context are **insufficient** to determine what was intended

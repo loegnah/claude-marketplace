@@ -2,7 +2,8 @@
 name: commit-simple
 description: Quick commit with auto-generated message based on project's commit style. Use when the user asks to commit, make a commit, or says "commit-simple".
 disable-model-invocation: true
-context: true
+context: fork
+model: haiku
 ---
 
 ## Context

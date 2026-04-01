@@ -2,7 +2,8 @@
 name: rebase-worktrees
 description: This skill should be used when the user asks to "rebase worktrees", "sync worktrees", "update all worktrees", "rebase all worktrees onto main", or wants to rebase multiple git worktrees onto a target branch with package install and .env synchronization.
 disable-model-invocation: true
-context: true
+context: fork
+model: haiku
 ---
 
 # Rebase Worktrees
@@ -51,12 +52,12 @@ git -C <worktree_path> rebase <target_branch>
 
 For each successfully rebased worktree, detect the package manager by checking for lockfiles in the worktree root and run the appropriate install command:
 
-| Lockfile | Command |
-| --- | --- |
-| `bun.lockb` or `bun.lock` | `bun install` |
-| `pnpm-lock.yaml` | `pnpm install` |
-| `yarn.lock` | `yarn install` |
-| `package-lock.json` | `npm install` |
+| Lockfile                  | Command        |
+| ------------------------- | -------------- |
+| `bun.lockb` or `bun.lock` | `bun install`  |
+| `pnpm-lock.yaml`          | `pnpm install` |
+| `yarn.lock`               | `yarn install` |
+| `package-lock.json`       | `npm install`  |
 
 If no lockfile is found, skip package install for that worktree. If multiple lockfiles exist, use the first match in the priority order above.
 

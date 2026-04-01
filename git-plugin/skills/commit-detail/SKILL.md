@@ -29,7 +29,19 @@ model: haiku
    - Only use English.
    - Use a conventional commit prefix: `feat:`, `fix:`, `chore:`, `refactor:`, `docs:`, etc.
    - Write a concise subject line (under 72 characters).
-   - Only add a body if there are genuinely distinct changes worth calling out separately.
+   - Include a body when there are multiple changes or when context adds value.
+   - In the body, list each meaningful change as a bullet point (`- `).
+   - Skip the body only for truly trivial single-line changes (e.g. typo fix, rename).
+   - Separate subject from body with a blank line.
 
 3. Execute the commit
-   - Run `git commit -m "MESSAGE"`
+   - Use heredoc to preserve multiline formatting:
+     ```
+     git commit -m "$(cat <<'EOF'
+     subject line here
+
+     - bullet point 1
+     - bullet point 2
+     EOF
+     )"
+     ```

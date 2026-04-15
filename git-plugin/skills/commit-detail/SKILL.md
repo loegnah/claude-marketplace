@@ -19,6 +19,7 @@ model: haiku
 - Use a single-line commit message subject.
 - Follow the project's existing commit style.
 - If there is nothing to commit (clean working tree), just report that to the user and stop.
+- Do NOT add any `Co-Authored-By` trailer or similar attribution footer to the commit message.
 
 ## Steps
 

@@ -13,10 +13,10 @@ model: haiku
 
 ## Rules
 
-- No ask. Just do commit.
+- No asking. Commit immediately without confirmation.
 - Commit message must be a single line only
 - Follow the project's existing commit style as closely as possible
-- Always get user confirmation before committing
+- Do NOT add any `Co-Authored-By` trailer or similar attribution footer to the commit message.
 
 ## Steps
 

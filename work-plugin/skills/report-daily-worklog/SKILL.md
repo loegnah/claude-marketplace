@@ -29,9 +29,9 @@ allowed-tools:
    - 없으면 이번 주 월요일부터 오늘까지를 계산한다.
 
 2. **커밋 수집**
-   - 모든 author 이름에 대해 커밋을 수집한다. `--author`를 `\|`로 연결하여 한 번에 조회한다:
+   - author date 기준으로 커밋을 수집한다 (`--after/--before`는 committer date 기준이므로 사용하지 않는다). `--author`를 `\|`로 연결하여 한 번에 조회한 후 awk로 날짜 필터링한다:
      ```
-     git log --author="name1\|name2" --after="<start>" --before="<end>" --pretty=format:"%ad | %s" --date=short --all
+     git log --author="name1\|name2" --pretty=format:"%ad | %s" --date=short --all | awk -F' \\| ' '$1 >= "<start>" && $1 <= "<end>"'
      ```
 
 3. **날짜별 한줄 요약 작성**

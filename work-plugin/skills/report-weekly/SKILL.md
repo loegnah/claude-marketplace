@@ -26,13 +26,13 @@ allowed-tools:
    - `git log --format="%an" | head -1` 으로 현재 사용자를 확인한다.
 
 2. **커밋 수집**
-   - 다음 명령으로 해당 기간의 커밋을 수집한다:
+   - author date 기준으로 커밋 해시를 수집한다 (`--after/--before`는 committer date 기준이므로 사용하지 않는다):
      ```
-     git log --author="<user>" --after="<start_date>" --before="<end_date_+1day>" --oneline --no-merges
+     git log --author="<user>" --no-merges --format="%ad %H %s" --date=short | awk '$1 >= "<start_date>" && $1 <= "<end_date>"'
      ```
    - 각 커밋의 상세 변경 내용도 확인한다:
      ```
-     git log --author="<user>" --after="<start_date>" --before="<end_date_+1day>" --no-merges --stat
+     git log --author="<user>" --no-merges --format="%ad %H" --date=short | awk '$1 >= "<start_date>" && $1 <= "<end_date>" {print $2}' | xargs git show --stat --no-patch
      ```
    - 필요시 개별 커밋의 diff도 확인하여 작업 내용을 정확히 파악한다.
 
